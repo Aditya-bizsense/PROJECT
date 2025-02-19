@@ -6,8 +6,8 @@ const EditUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     phone: "",
   });
@@ -18,6 +18,7 @@ const EditUser = () => {
         const response = await axios.get(
           `https://localhost:7027/api/users/${id}`
         );
+        console.log("User data:", response.data);
         setUser(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -47,8 +48,8 @@ const EditUser = () => {
         <label>First Name:</label>
         <input
           type="text"
-          name="firstName"
-          value={user.firstName}
+          name="firstname"
+          value={user.firstname}
           onChange={handleChange}
           required
         />
@@ -56,8 +57,8 @@ const EditUser = () => {
         <label>Last Name:</label>
         <input
           type="text"
-          name="lastName"
-          value={user.lastName}
+          name="lastname"
+          value={user.lastname}
           onChange={handleChange}
           required
         />

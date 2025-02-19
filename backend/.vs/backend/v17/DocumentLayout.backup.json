@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{13E3DB1F-AC83-4BD2-A2DA-8ABB39B71DF2}|backend\\backend.csproj|solutionrelative:backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{13E3DB1F-AC83-4BD2-A2DA-8ABB39B71DF2}|backend\\backend.csproj|c:\\users\\aditya.oke\\practice\\project\\backend\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{13E3DB1F-AC83-4BD2-A2DA-8ABB39B71DF2}|backend\\backend.csproj|solutionrelative:backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{13E3DB1F-AC83-4BD2-A2DA-8ABB39B71DF2}|backend\\backend.csproj|c:\\users\\aditya.oke\\practice\\project\\backend\\backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{13E3DB1F-AC83-4BD2-A2DA-8ABB39B71DF2}|backend\\backend.csproj|solutionrelative:backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,6 +55,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "backend\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\appsettings.Development.json",
+              "RelativeToolTip": "backend\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-19T10:20:20.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "backend\\Controllers\\UserController.cs",
@@ -58,12 +74,11 @@
               "RelativeToolTip": "backend\\Controllers\\UserController.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAawFAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T10:29:43.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T10:29:43.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\Dbcontexts\\AppDbContext.cs",
               "RelativeDocumentMoniker": "backend\\Dbcontexts\\AppDbContext.cs",
@@ -71,12 +86,11 @@
               "RelativeToolTip": "backend\\Dbcontexts\\AppDbContext.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAowBkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T10:28:28.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T10:28:28.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\Users.cs",
               "RelativeDocumentMoniker": "backend\\Users.cs",
@@ -88,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\Entities\\User.cs",
               "RelativeDocumentMoniker": "backend\\Entities\\User.cs",
@@ -106,7 +120,7 @@
               "RelativeDocumentMoniker": "backend\\Program.cs",
               "ToolTip": "C:\\Users\\aditya.oke\\practice\\project\\backend\\backend\\Program.cs",
               "RelativeToolTip": "backend\\Program.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-18T10:28:08.772Z",
               "EditorCaption": ""

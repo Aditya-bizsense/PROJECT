@@ -4,8 +4,8 @@ import style from "./form.module.css";
 
 const UserForm = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     phone: "",
@@ -24,9 +24,9 @@ const UserForm = () => {
   // Validate form fields
   const validateForm = () => {
     let newErrors = {};
-    if (!formData.firstName.trim())
-      newErrors.firstName = "First name is required";
-    if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
+    if (!formData.firstname.trim())
+      newErrors.firstname = "First name is required";
+    if (!formData.lastname.trim()) newErrors.lastname = "Last name is required";
 
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
@@ -76,8 +76,8 @@ const UserForm = () => {
       // Handle success
       setSuccessMessage("User registered successfully!");
       setFormData({
-        firstName: "",
-        lastName: "",
+        firstname: "",
+        lastname: "",
         email: "",
         password: "",
         phone: "",
@@ -102,11 +102,11 @@ const UserForm = () => {
           <input
             className={style.input}
             type="text"
-            name="firstName"
-            value={formData.firstName}
+            name="firstname"
+            value={formData.firstname}
             onChange={handleChange}
           />
-          <p className={style.error}>{errors.firstName}</p>
+          <p className={style.error}>{errors.firstname}</p>
         </div>
 
         <div>
@@ -114,11 +114,11 @@ const UserForm = () => {
           <input
             className={style.input}
             type="text"
-            name="lastName"
-            value={formData.lastName}
+            name="lastname"
+            value={formData.lastname}
             onChange={handleChange}
           />
-          <p className={style.error}>{errors.lastName}</p>
+          <p className={style.error}>{errors.lastname}</p>
         </div>
 
         <div>

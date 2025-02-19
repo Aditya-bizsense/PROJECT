@@ -14,6 +14,9 @@ namespace backend.Entities
 
         [Required] public string Lastname { get; set; }
 
+        [Required]
+        public string PasswordHash { get; set; }
+        
         public string? Email { get; set; }
 
         [Required] public string Phone { get; set; }

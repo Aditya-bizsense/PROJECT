@@ -24,6 +24,8 @@ namespace backend.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(user.PasswordHash);
+            
             _context.Users.Add(user);
             _context.SaveChanges();
 

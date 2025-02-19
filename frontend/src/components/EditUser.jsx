@@ -34,7 +34,7 @@ const EditUser = () => {
     e.preventDefault();
     try {
       await axios.put(`https://localhost:7027/api/users/${id}`, user);
-      navigate("/users");
+      navigate("/");
     } catch (error) {
       console.error("Error updating user:", error);
     }

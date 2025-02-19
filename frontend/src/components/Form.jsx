@@ -7,6 +7,7 @@ const UserForm = () => {
     firstName: "",
     lastName: "",
     email: "",
+    password: "",
     phone: "",
   });
 
@@ -33,6 +34,17 @@ const UserForm = () => {
       newErrors.email = "Invalid email format";
     }
 
+    if (!formData.password.trim()) {
+      newErrors.password = "Password is required";
+    } else if (
+      formData.password.length < 8 ||
+      !/[0-9]/.test(formData.password) ||
+      !/[!@#$%^&*]/.test(formData.password)
+    ) {
+      newErrors.password =
+        "Password must be at least 8 characters long and include a number & special character";
+    }
+
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{10}$/.test(formData.phone)) {
@@ -53,14 +65,23 @@ const UserForm = () => {
 
     try {
       // Send data to .NET backend API
+      const userToSend = { ...formData, PasswordHash: formData.password };
+      delete userToSend.password; // Remove old key
+
       const response = await axios.post(
         "https://localhost:7027/api/users",
-        formData
+        userToSend
       );
 
       // Handle success
       setSuccessMessage("User registered successfully!");
-      setFormData({ firstName: "", lastName: "", email: "", phone: "" }); // Reset form
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        phone: "",
+      }); // Reset form
       setErrors({});
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -110,6 +131,18 @@ const UserForm = () => {
             onChange={handleChange}
           />
           <p className={style.error}>{errors.email}</p>
+        </div>
+
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            className={style.input}
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+          <p className={style.error}>{errors.password}</p>
         </div>
 
         <div>

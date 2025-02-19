@@ -23,6 +23,7 @@ namespace backend.Dbcontexts
                     Id = 1,
                     Firstname = "John Doe",
                     Lastname = "Doe",
+                    PasswordHash = "password123",
                     Email = "John@gmail.com",
                     Phone = "1234567890"
                 }
@@ -32,6 +33,7 @@ namespace backend.Dbcontexts
                     Id = 2,
                     Firstname = "Jane",
                     Lastname = "Smith",
+                    PasswordHash = "password123",
                     Email = "Jane@gmail.com",
                     Phone = "0987654321"
                 }

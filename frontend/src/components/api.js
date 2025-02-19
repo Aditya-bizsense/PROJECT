@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:7027/api/users"; // Your backend API
+const API_URL = "https://localhost:7027/api/users"; // Your backend API
 
 // Fetch all users
 export const getUsers = async () => {
@@ -9,6 +9,7 @@ export const getUsers = async () => {
     return response.data;
   } catch (error) {
     console.error("Error fetching users:", error);
+    return [];
   }
 };
 

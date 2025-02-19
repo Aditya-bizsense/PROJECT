@@ -17,6 +17,9 @@ namespace backend.Model
         [Required(ErrorMessage = "Last name is required")]
         public required string Lastname { get; set; }
 
+        [Required]
+        public required string PasswordHash { get; set; }
+        
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid email format")]
         public required string Email { get; set; }

@@ -147,6 +147,7 @@
         "required": [
           "firstname",
           "lastname",
+          "passwordHash",
           "phone"
         ],
         "type": "object",
@@ -160,6 +161,10 @@
             "type": "string"
           },
           "lastname": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "passwordHash": {
             "minLength": 1,
             "type": "string"
           },

@@ -1,30 +1,21 @@
-import { useEffect, useState } from "react";
-import { getUsers, deleteUser } from "./api";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUsers, deleteUser } from "./redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import styles from "./UserList.module.css";
 
 const UserList = () => {
-  const [users, setUsers] = useState([]);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { users, loading, error } = useSelector((state) => state.users);
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const fetchUsers = async () => {
-    try {
-      console.log("Fetching users...");
-      const data = await getUsers();
-      console.log("Fetched users:", data);
-      setUsers(data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
+    dispatch(fetchUsers());
+  }, [dispatch]);
 
   const handleDelete = async (id) => {
-    await deleteUser(id);
-    fetchUsers(); // Refresh list
+    await dispatch(deleteUser(id));
+    dispatch(fetchUsers()); // Refresh list
   };
 
   return (
@@ -33,8 +24,12 @@ const UserList = () => {
       <button className={styles.createBtn} onClick={() => navigate("/create")}>
         Create User
       </button>
-      {users.length === 0 ? (
-        <p className={styles.loadingText}>Loading users or no users found...</p>
+      {loading ? (
+        <p className={styles.loadingText}>Loading users...</p>
+      ) : error ? (
+        <p className={styles.errorText}>{error}</p>
+      ) : users.length === 0 ? (
+        <p className={styles.loadingText}>No users found...</p>
       ) : (
         <div className={styles.userGrid}>
           {users.map((user) => (

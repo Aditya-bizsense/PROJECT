@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser } from "./redux/userSlice";
 import style from "./form.module.css";
 
 const UserForm = () => {
+  const dispatch = useDispatch();
+  const { loading, error } = useSelector((state) => state.users);
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -12,28 +16,22 @@ const UserForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
 
-  // Handle input change
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Validate form fields
   const validateForm = () => {
     let newErrors = {};
     if (!formData.firstname.trim())
       newErrors.firstname = "First name is required";
     if (!formData.lastname.trim()) newErrors.lastname = "Last name is required";
-
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Invalid email format";
     }
-
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
     } else if (
@@ -42,9 +40,8 @@ const UserForm = () => {
       !/[!@#$%^&*]/.test(formData.password)
     ) {
       newErrors.password =
-        "Password must be at least 8 characters long and include a number & special character";
+        "Password must be at least 8 characters and include a number & special character";
     }
-
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\d{10}$/.test(formData.phone)) {
@@ -55,25 +52,14 @@ const UserForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
-    setLoading(true);
     setSuccessMessage("");
 
     try {
-      // Send data to .NET backend API
-      const userToSend = { ...formData, PasswordHash: formData.password };
-      delete userToSend.password; // Remove old key
-
-      const response = await axios.post(
-        "https://localhost:7027/api/users",
-        userToSend
-      );
-
-      // Handle success
+      await dispatch(addUser(formData)).unwrap();
       setSuccessMessage("User registered successfully!");
       setFormData({
         firstname: "",
@@ -81,20 +67,18 @@ const UserForm = () => {
         email: "",
         password: "",
         phone: "",
-      }); // Reset form
+      });
       setErrors({});
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    } finally {
-      setLoading(false);
+    } catch (err) {
+      console.error("Error submitting form:", err);
     }
   };
 
   return (
     <div className={style.formContainer}>
       <h2>User Registration</h2>
-
       {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       <form onSubmit={handleSubmit}>
         <div>

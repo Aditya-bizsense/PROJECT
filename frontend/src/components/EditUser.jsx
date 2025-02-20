@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import style from "./edituser.module.css";
 
 const EditUser = () => {
   const { id } = useParams();
@@ -49,6 +50,7 @@ const EditUser = () => {
         <input
           type="text"
           name="firstname"
+          className={style.input}
           value={user.firstname}
           onChange={handleChange}
           required
@@ -58,6 +60,7 @@ const EditUser = () => {
         <input
           type="text"
           name="lastname"
+          className={style.input}
           value={user.lastname}
           onChange={handleChange}
           required
@@ -67,6 +70,7 @@ const EditUser = () => {
         <input
           type="email"
           name="email"
+          className={style.input}
           value={user.email}
           onChange={handleChange}
           required
@@ -76,12 +80,13 @@ const EditUser = () => {
         <input
           type="text"
           name="phone"
+          className={style.input}
           value={user.phone}
           onChange={handleChange}
           required
         />
 
-        <button type="submit">Update</button>
+        <button className={style.button} type="submit">Update</button>
       </form>
     </div>
   );

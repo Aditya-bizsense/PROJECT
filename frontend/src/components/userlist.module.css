@@ -1,0 +1,100 @@
+/* Dark theme styles */
+.container {
+    background-color: #1e1e1e;
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .createBtn {
+    background-color: #138017;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .createBtn:hover {
+    background-color: #45a049;
+  }
+  
+  /* User Card Grid */
+  .userGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .userCard {
+    background: #2c2c2c;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .userCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .userName {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .userDetails {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  
+  /* Buttons */
+  .userButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .editBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .editBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .deleteBtn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Loading Text */
+  .loadingText {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
